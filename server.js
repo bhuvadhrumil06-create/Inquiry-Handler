@@ -58,7 +58,7 @@ app.use("/", masterRouter);
 const port = process.env.PORT || 3000;
 
 const start = () => {
-  mongoose.connect(process.env.MONGO_URL, {
+  mongoose.connect("mongodb+srv://parthivbadreshiya:part123@cluster0.xi3jc.mongodb.net/Inquiry-Handler?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
