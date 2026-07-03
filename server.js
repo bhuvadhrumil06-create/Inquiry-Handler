@@ -58,12 +58,9 @@ app.use("/", masterRouter);
 const port = process.env.PORT || 3000;
 
 const start = () => {
-  mongoose.connect("mongodb+srv://parthivbadreshiya:part123@cluster0.xi3jc.mongodb.net/Inquiry-Handler?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
-  console.log("Database Connected");
+  mongoose.connect("mongodb+srv://parthivbadreshiya:part123@cluster0.xi3jc.mongodb.net/Inquiry-Handler?retryWrites=true&w=majority&appName=Cluster0")
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Failed to connect to MongoDB:', err));
   app.listen(port, () => {
     console.log(`Server started on port no ${port}`);
   });
